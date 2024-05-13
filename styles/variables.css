@@ -7,5 +7,6 @@
   --text-color: #F1B2CE;
   --heading-color: #DB00FF;
   --background-color: #000028;
-  ;
+  --breakpoint: 748px;
+  --breakpoint-simulation: (100vw - var(--breakpoint));
 }

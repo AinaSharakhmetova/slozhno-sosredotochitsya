@@ -5,20 +5,48 @@
   font-family: 'IBM Plex Mono', sans-serif;
   font-weight: normal;
   background-color: var(--background-color);
+  background-image: url(../images/cover-image-dark.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: grid;
+  margin: 0 clamp(10px, var(--breakpoint-simulation), 20px);
 }
+
+
+
+
+
+/*.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url(../images/cover-image-dark.png);
+  background-attachment: fixed;
+  block-size: 100%;
+  inline-size: 100%;  
+  opacity: 0.5;
+  z-index: -1;
+}*/
+
+
 
 .header {
-  background-image: url(../images/cover-image-dark.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  
+  position: relative;
+  display: grid;
+  grid-template-columns: ;
 
 }
 
+
+
 .decoration {
+  
   position: absolute;
-  inset-block-start: 10px;
-  inset-inline-end: 38px;
+  inset-block-start: clamp(10px, var(--breakpoint-simulation), 20px);
+  inset-inline-end: 0;
   color: var(--accent-color);
   font-size: 18px;
   line-height: 25px;
@@ -39,7 +67,7 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: 700;
   line-height: 96px;
-  color: #DB00FF;
+  color: var(--heading-color);
   text-shadow: 4px 4px var(--accent-color);
   
 }
@@ -52,18 +80,32 @@
   background-color: var(--accent-color);
 }
 
+.header__theme-menu-list {
+  list-style-type: none;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  
+}
+
+
+
+
 .header__theme-menu-button {
+  text-transform: lowercase;
   cursor: pointer;
   background-color: transparent;
-  color: inherit;
-  border: 1px #fff solid;
+  color: var(--accent-color);
+  border: 1px var(--accent-color) solid;
   text-align: center;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: inherit;
   font-size: 18px;
-  font-weight: 700;
-  line-height: 22px;
-  padding: 6px;
-  block-size: 34px;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 0 13px;
+  block-size: 26px;
+  inline-size: 70px;
+
 }
 
 .button:hover {
@@ -86,4 +128,8 @@
   pointer-events: none;
 }
 
+
+/* Для планшета и десктопа 
+clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem)
+*/
 
